@@ -11,11 +11,24 @@
 // console.log(message);
 
 
-function getLengthCircle(len) {
-  // Область видимости функции getSumm
-  let num = 5; // можно и var
-  let result = 2 * num * Math.PI;
-  console.log(result);
+// function getLengthCircle(len) {
+//   // Область видимости функции getSumm
+//   let num = 5; // можно и var
+//   let result = 2 * num * Math.PI;
+//   console.log(result);
+// }
+// getLengthCircle();
+// console.log(result);
+
+
+function getUrl(domain) {
+  return function(url) {
+    return `https://${url}.${domain}`
+    }
 }
-getLengthCircle();
-console.log(result);
+
+const ruUrl = getUrl(`ru`);
+const comUrl = getUrl('com');
+
+console.log(comUrl(`webheroschool`));
+console.log(ruUrl(`webheroschool`));
